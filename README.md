@@ -36,6 +36,7 @@ Follow these steps to get the entire application running locally.
 ```bash
 git clone https://github.com/yourusername/threat-intelligence-dashboard.git
 cd threat-intelligence-dashboard
+```
 
 ### 2️⃣ Set Up the Backend
 
@@ -45,62 +46,61 @@ Python 3.x installed
 MongoDB Atlas URI (or local MongoDB running at mongodb://localhost:27017)
 
 ✅ Create Virtual Environment
-bash
-Copy
-Edit
+```bash
 cd backend
 python -m venv venv
 venv\Scripts\activate  # For Windows
 # source venv/bin/activate  # For macOS/Linux
 pip install -r requirements.txt
+```
+
 📦 requirements.txt
-txt
-Copy
-Edit
+```txt
 flask
 flask-cors
 pymongo
 pandas
 scikit-learn
 joblib
-3️⃣ Configure MongoDB
+```
+
+### 3️⃣ Configure MongoDB
 In backend/utils/db.py, update the MongoClient line if using MongoDB Atlas:
 
-python
-Copy
-Edit
+```python
 client = MongoClient("your-mongodb-atlas-uri")
-4️⃣ Ingest Data
+```
+
+### 4️⃣ Ingest Data
 Place the Cybersecurity_Dataset.csv inside scripts/, then run:
 
-bash
-Copy
-Edit
+```bash
 python scripts/ingest_data.py
+```
 ✅ This populates the threats collection in MongoDB.
 
-5️⃣ Train ML Model
+### 5️⃣ Train ML Model
 This script trains a logistic regression model using the Cleaned Threat Description field and saves it:
 
-bash
-Copy
-Edit
+```bash
 python scripts/train_model.py
-6️⃣ Run Backend API Server
-bash
-Copy
-Edit
+```
+
+### 6️⃣ Run Backend API Server
+
+```bash
 python app.py
+```
 Your Flask backend will run at:
 🔗 http://localhost:5000
 
-7️⃣ Set Up and Run the Frontend
-bash
-Copy
-Edit
+### 7️⃣ Set Up and Run the Frontend
+
+```bash
 cd ../frontend
 npm install
 npm start
+```
 Your React frontend will run at:
 🔗 http://localhost:3000
 
@@ -112,32 +112,31 @@ Endpoint	Method	Description
 /api/analyze	POST	Predict category from a threat description
 
 🧪 Running Tests
+
 🔹 (Optional testing setup — include only if implemented)
 
 If you implemented backend unit tests:
 
-bash
-Copy
-Edit
+```bash
 cd backend
 pytest
+```
+
 If frontend testing is added using Jest:
 
-bash
-Copy
-Edit
+```bash
 cd frontend
 npm test
+```
 
 📝 Final Notes
+
 ❗ If you're behind a firewall or using MongoDB Atlas, make sure your IP is whitelisted.
 
 💡 CORS issues were addressed using flask-cors.
 
 📂 Folder Structure
-cpp
-Copy
-Edit
+```cpp
 threat-intelligence-dashboard/
 ├── backend/
 │   ├── app.py
@@ -153,3 +152,4 @@ threat-intelligence-dashboard/
 │   └── train_model.py
 ├── Cybersecurity_Dataset.csv
 └── README.md
+```
