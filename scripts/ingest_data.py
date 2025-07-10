@@ -10,7 +10,7 @@ collection = db["threats"]
 collection.delete_many({})
 
 # Read CSV
-df = pd.read_csv('E:/Consecure_Assignment/data/Cybersecurity_Dataset.csv')  # Ensure file is downloaded from Kaggle
+df = pd.read_csv('E:/Consecure_Assignment/data/Cybersecurity_Dataset.csv')  # Ensure file name is changed according to your system
 
 df.rename(columns={
     'Threat Category': 'Threat_Category',
