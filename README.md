@@ -79,12 +79,38 @@ python scripts/ingest_data.py
 ```
 ✅ This populates the threats collection in MongoDB.
 
+# ⚠️ Note on Dataset File Path
+In the script scripts/ingest_data.py, make sure to update the CSV file path according to your system:
+
+```python
+df = pd.read_csv('E:/Consecure_Assignment/data/Cybersecurity_Dataset.csv')
+```
+📌 If you're cloning the project, simply place the Cybersecurity_Dataset.csv file inside the data/ folder (you can create it if it doesn't exist), and then update the path in the script like:
+
+```python
+df = pd.read_csv('./data/Cybersecurity_Dataset.csv')
+```
+✅ This ensures the data ingestion works correctly on any system.
+
 ### 5️⃣ Train ML Model
 This script trains a logistic regression model using the Cleaned Threat Description field and saves it:
 
 ```bash
 python scripts/train_model.py
 ```
+
+# ⚠️ Note on File Path in train_model.py
+In the script scripts/train_model.py, make sure to update the path to the dataset based on your local file system:
+
+```python
+df = pd.read_csv('E:/Consecure_Assignment/data/Cybersecurity_Dataset.csv')
+```
+📌 If you're placing the dataset inside a data/ folder (recommended), update it like this:
+
+```python
+df = pd.read_csv('./data/Cybersecurity_Dataset.csv')
+```
+✅ This helps avoid path issues and makes the project portable across systems.
 
 ### 6️⃣ Run Backend API Server
 
