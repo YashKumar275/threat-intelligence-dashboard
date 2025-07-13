@@ -2,7 +2,8 @@ import pandas as pd
 from pymongo import MongoClient
 import json
 
-client = MongoClient("mongodb+srv://consassign:consecure@consecureassign.ncl7yyj.mongodb.net/?retryWrites=true&w=majority&appName=ConsecureAssign")
+#Replace with your 
+client = MongoClient("your-mongodb-atlas-uri")
 db = client["threat_db"]
 collection = db["threats"]
 
