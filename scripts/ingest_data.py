@@ -2,7 +2,7 @@ import pandas as pd
 from pymongo import MongoClient
 import json
 
-#Replace with your 
+# Replace this with your MongoDB URI if you're using Atlas/cloud 
 client = MongoClient("your-mongodb-atlas-uri")
 db = client["threat_db"]
 collection = db["threats"]
