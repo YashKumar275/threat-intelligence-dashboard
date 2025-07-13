@@ -83,7 +83,7 @@ python scripts/ingest_data.py
 In the script scripts/ingest_data.py, make sure to update the CSV file path according to your system:
 
 ```python
-df = pd.read_csv('E:/Consecure_Assignment/data/Cybersecurity_Dataset.csv')
+df = pd.read_csv('...')
 ```
 📌 If you're cloning the project, simply place the Cybersecurity_Dataset.csv file inside the data/ folder (you can create it if it doesn't exist), and then update the path in the script like:
 
@@ -103,7 +103,7 @@ python scripts/train_model.py
 In the script scripts/train_model.py, make sure to update the path to the dataset based on your local file system:
 
 ```python
-df = pd.read_csv('E:/Consecure_Assignment/data/Cybersecurity_Dataset.csv')
+df = pd.read_csv('...')
 ```
 📌 If you're placing the dataset inside a data/ folder (recommended), update it like this:
 
