@@ -65,7 +65,13 @@ joblib
 ```
 
 ### 3️⃣ Configure MongoDB
-In backend/utils/db.py, update the MongoClient line if using MongoDB Atlas:
+If you're using MongoDB Atlas, make sure to update the MongoDB connection URI in the following files:
+
+1. backend/utils/db.py
+
+2. scripts/ingest_data.py
+
+Replace the existing MongoClient line with your own MongoDB Atlas URI:
 
 ```python
 client = MongoClient("your-mongodb-atlas-uri")
